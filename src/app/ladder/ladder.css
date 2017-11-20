@@ -1,0 +1,10 @@
+.pane{
+  background: #e572bd;
+  width: 600px;
+  border: solid;
+  border-color: #f90074;
+  border-radius: 25px;
+}
+.ladderplayer{
+  padding: 10px;
+}

@@ -1,0 +1,18 @@
+<div class="content" (click)="select()">
+  <input class="input" [(ngModel)]="inputText" (ngModelChange)="handleChange()" [type]="type" [class.error]="errorMessage" #inputField>
+  <label [@label]='state' class="label" for="input">
+    {{label}}
+  </label>
+  <div class="errorMessage" *ngIf="hasError()">
+    <svg width="14" height="14" class="errorMessageSvg">
+  <circle cx="7" cy="7" r="6" stroke="red" stroke-width="1" fill="transparent" />
+  <text x="5" y="11" fill="red">!</text>
+
+</svg>
+    <div class="errorMessageText">
+    {{errorMessage}}
+    </div>
+
+  </div>
+
+</div>

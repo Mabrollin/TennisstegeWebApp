@@ -1,0 +1,29 @@
+<div class="registerBox">
+  <div class="usernameContainer">
+    <inputfield label="Användarnamn" [errorMessage]="usernameFieldErrorMessage" (changeEvent)='handleChangeUsernameEvent($event)' type="text"></inputfield>
+  </div>
+  <hr>
+  <div class="passwordContainer">
+    <inputfield label="Lösenord" [errorMessage]="passwordFieldErrorMessage" (changeEvent)='handleChangePasswordEvent($event)' type="password"></inputfield>
+    <inputfield label="Bekräfta Lösenord" [errorMessage]="passwordConfirmFieldErrorMessage" (changeEvent)='handleChangePasswordConfirmEvent($event)' type="password"></inputfield>
+  </div>
+  <hr>
+  <div class="nameContainer">
+    <inputfield label="Förnamn" [errorMessage]="firstnameFieldErrorMessage" (changeEvent)='handleChangeFirstnameEvent($event)' type="text"></inputfield>
+    <inputfield label="Efternamn" [errorMessage]="lastnameFieldErrorMessage" (changeEvent)='handleChangeLastnameEvent($event)' type="text"></inputfield>
+  </div>
+  <hr>
+  <div class="contactContainer">
+    <inputfield label="Email" [errorMessage]="emailFieldErrorMessage" (changeEvent)='handleChangeEmailEvent($event)' type="text"></inputfield>
+    <inputfield label="Bekräfta Email" [errorMessage]="emailConfirmFieldErrorMessage" (changeEvent)='handleChangeEmailConfirmEvent($event)' type="text"></inputfield>
+      <inputfield label="Mobilnummer" [errorMessage]="phoneFieldErrorMessage" (changeEvent)='handleChangePhoneEvent($event)' type="text"></inputfield>
+  </div>
+<hr>
+  <div class="buttonContainer">
+    <button class="registerButton" type="button" (click)="register()">Registrera</button>
+    <button class="backButton" type="button" (click)="back()">backa</button>
+  </div>
+
+
+
+</div>

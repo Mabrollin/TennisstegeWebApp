@@ -1,0 +1,102 @@
+.contentBox {
+  padding: 0;
+  padding-left: 30px;
+  background-color: #77aee5;
+  border-radius: 25px;
+  border-color: #008ff4;
+  border-style: solid;
+  border-width: thick;
+  width: 400px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+.challange {
+  width: 300px;
+  z-index: 4;
+  position: absolute;
+  order: 3;
+}
+
+.king{
+  top: 4px;
+  left: -1px;
+  font-size: 18px;
+  color: #ccb524;
+  outline-color: black;
+  outline: inherit;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+  z-index:1;
+}
+.name {
+  order: 2;
+  width: 245px;
+}
+.pos {
+  left: -5px;
+  top: -5px;
+  height: 26px;
+  width: 26px;
+  order: 1;
+  padding-left: 5px;
+  font-size: 16px;
+  background-color: #008ff4;
+
+    z-index: 3;
+    position: absolute;
+
+}
+.posNumber{
+  top: 2px;
+  left: 8px;
+  z-index: 5;
+  position: absolute;
+  color: lightgray;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.challangeButton {
+  left: 215px;
+  top: 29px;
+  border-style: solid;
+  border-color: #008ff4;
+  border-top-color: #008ff4;
+  border-left-color: #008ff4;
+  border-width: thick;
+  position: absolute;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+
+}
+.challangeButtonText{
+  height: 26px;
+  width: 120px;
+  text-align: center;
+  background-color: orange;
+  border-style: solid;
+  border-color: gold;
+  order: 1;
+}
+.challangeButtonSymbol{
+  padding-top: 5px;
+  padding-left: 2px;
+  height: 26px;
+  width: 26px;
+  background-color: gold;
+  order: 2;
+}
+.fire{
+  color: #eaac00;
+  outline-color: black;
+  outline: inherit;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.challangeButton:hover .fire{
+  color: red;
+}
+.challangeButton{
+  cursor: pointer;
+}

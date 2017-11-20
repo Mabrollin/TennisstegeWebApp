@@ -1,0 +1,37 @@
+.content{
+    opacity: 0.7;
+}
+button{
+  font-size: 16px;
+  text-align: center;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 16px;
+  height: 40px;
+  width: 220px;
+}
+button:hover{
+  cursor: pointer;
+}
+button:focus{
+  outline: none;
+}
+.loginButton{
+  background-color: #77aee5;
+}
+.loginButton:hover{
+  background-color: #008ff4;
+}
+.registerButton{
+  background-color: #e572bd;
+}
+.registerButton:hover{
+  background-color: #f90074;
+}
+.facebookButton{
+  color: #F2F2F2;
+  background: #3b5998 url('https://www.facebook.com/images/fb_icon_325x325.png') no-repeat top left;
+}
+.facebookButton:hover{
+  background-color: #627AAD;
+}

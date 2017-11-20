@@ -1,0 +1,13 @@
+
+
+    <div class="loginBox" [@shake]='state'(@shake.done)="state = ''">
+<inputfield label="Användarnamn" [errorMessage]="usernameFieldErrorMessage" class="userNameField" (changeEvent)='handleChangeUsernameEvent($event)' type="text"></inputfield>
+<inputfield label="Lösenord" [errorMessage]="passwordFieldErrorMessage" class="passwordField" (changeEvent)='handleChangePasswordEvent($event)' type="password"></inputfield>
+      <!-- <span class="userNameLabel">Användarnamn:</span>
+      <input class="userNameField" [class.errorField]="hasUsernameError()" type="text" [(ngModel)]="username" >
+      <span class="passwordLabel">Lösenord:</span>
+      <input class="passwordField" [class.errorField]="hasPasswordError()" type="password" [(ngModel)]="password"> -->
+      <button class="loginButton" type="button" (click)="login(username, password); ">Logga in</button>
+      <button class="backButton" type="button" (click)="back(); ">Backa</button>
+      <span class="errorMessage" ngShow='errorMessage !=""'>{{errorMessage}}</span>
+    </div>

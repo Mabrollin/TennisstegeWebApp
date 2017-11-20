@@ -1,0 +1,82 @@
+.registerBox {
+  opacity: 0.7;
+  padding: 0;
+  padding-top: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.usernameContainer {
+
+  display: flex;
+
+}
+
+.passwordContainer {
+
+  display: flex;
+}
+
+.nameContainer {
+
+  display: flex;
+}
+
+.contactContainer {
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buttonContainer {
+  order: 5;
+  display: flex;
+}
+inputfield{
+  margin-right: 20px;
+}
+hr{
+  height: 1px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+span {
+  padding-left: 16px;
+  width: 120px;
+  margin-bottom: 22px;
+}
+
+button {
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 0;
+  border-radius: 16px;
+  height: 32px;
+  width: 160px;
+}
+
+.registerButton {
+  margin-top: 12px;
+margin-left: 40px;
+  background-color: #95e26f;
+  color: #FFF;
+}
+
+.registerButton:hover {
+  margin-top: 12px;
+  background-color: #a1e2af;
+}
+
+.backButton {
+  margin-left: 60px;
+  margin-top: 12px;
+  background-color: #e572bd;
+}
+
+.backButton:hover {
+  margin-top: 12px;
+  background-color: #f90074;
+}

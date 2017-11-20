@@ -1,0 +1,49 @@
+.label{
+  position: absolute;
+  font-size: 16px;
+  user-select: none;
+  padding-left: 4px;
+  color: #d0d0d0;
+}
+.input{
+  padding-left: 4px;
+  font-size: 16px;
+  height: 20px;
+  width: 180px;
+  position: absolute;
+  border: none;
+  background-color: inherit;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+
+
+}
+.content{
+  margin: 0px 0px 20px 0px;
+  padding: 16px 0px 8px 4px;
+  width: 200px;
+  height: 20px;
+  background-color: white;
+}
+.input:focus{
+  outline:0;
+  border-bottom-color: #a1e2af;
+}
+.error{
+    border-bottom-color: red;
+}
+.errorMessage{
+  color: red;
+  font-size: 12px;
+  padding-top: 30px;
+  display: flex;
+}
+.errorMessageSvg{
+  order: 1;
+  margin-right: 8px;
+}
+.errorMessageText{
+
+  order: 2;
+}
