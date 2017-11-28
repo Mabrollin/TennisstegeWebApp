@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserSessionService } from '../_services/usersessionservice';
 
 @Component({
   selector: 'navbar',
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 })
 
 export class Navbar{
+  constructor(private userSessionService :UserSessionService){
+
+  }
+  hasLoggedInUser(): boolean{
+    return this.userSessionService.hasActiveToken();
+  }
 }

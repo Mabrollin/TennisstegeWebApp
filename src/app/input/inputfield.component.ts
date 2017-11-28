@@ -71,10 +71,8 @@ export class InputField {
   private inputElement: ElementRef;
 
   ngAfterInit(){
-    console.log("klar!");
   }
   hasError(): boolean {
-    console.log("error: " +this.errorMessage);
     return this.errorMessage && this.errorMessage.length != 0;
   }
   handleChange(): void {
@@ -86,7 +84,6 @@ export class InputField {
     }
     else {
       this.state = "hasInput";
-      console.log(input);
       this.changeEvent.emit(input);
 
     }

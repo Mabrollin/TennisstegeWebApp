@@ -3,6 +3,12 @@
     Mock Icon ;D
   </div>
   <div class="right">
-    <router-outlet name="navbar"></router-outlet>
+    <div class="" [hidden]="hasLoggedInUser()">
+        <startnavbar></startnavbar>
+    </div>
+    <div class=""[hidden]="!hasLoggedInUser()">
+      <usernavbar></usernavbar>
+    </div>
+
   </div>
 </div>

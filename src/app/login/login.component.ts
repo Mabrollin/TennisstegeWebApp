@@ -13,10 +13,6 @@ import {
 } from '@angular/animations';
 import { swipeAnimation } from '../_animations';
 
-
-
-
-
 @Component({
   selector: 'login',
 
@@ -77,25 +73,15 @@ this.passwordFieldErrorMessage = null;
 
     this.loginService.login(username, password).subscribe(
       res => {
-        if (res === 'ok') {
-            localStorage.setItem('currentUser', username);
+        if (res) {
           this.router.navigate(['/profile']);
         }
-        else if(res === 'user not found') {
-          this.usernameFieldErrorMessage = 'kunde inte hitta användaren';
-          this.state = 'shake';
-        }
-        else if(res === 'wrong password') {
-          this.passwordFieldErrorMessage = 'fel lösenord';
-          this.state = 'shake';
-        }
         else {
-          //this.errorMessage = 'oväntat fel';
+          this.passwordFieldErrorMessage = 'fel användarnamn eller lösenord';
           this.state = 'shake';
         }
       },
       error => {
-        console.log("hej: ", error)
         //this.errorMessage = 'serverfel';
         this.state = 'shake';
 

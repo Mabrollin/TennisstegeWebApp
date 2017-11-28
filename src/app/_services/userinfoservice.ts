@@ -1,6 +1,10 @@
 import { Injectable }     from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { UserSessionService } from './usersessionservice';
+
+import { User } from '../_properties/user';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -12,23 +16,21 @@ export class UserInfoService {
   public token: string;
 public currentUser: string;
 
-  constructor(private http: Http) {
-    this.currentUser = localStorage.getItem('currentUser');
+  constructor(private http: HttpClient, private userSessionService: UserSessionService) {
+    this.currentUser = userSessionService.getCurrentUser();
   }
 
-  private infoURL = 'http://localhost:8080/user/getContactInfo?username=';
+  private baseUserURL = 'http://localhost:8080/user/';
+  private getURL = '/getContactInfo'
 
 
-  getContactInfo(): Observable<Response> {
-  //  let headers = new Headers({ 'Authorization': 'Bearer ' + this.loginService.token });
-//        let options = new RequestOptions({ headers: headers });
-    return this.http.get(this.infoURL+this.currentUser) // ...using post request
-      .map((res: Response) => {
-        console.log(res);
-      res.json();
+  getContactInfo(): Observable<any> {
+    return this.http.get<User>(this.baseUserURL+this.currentUser);
+    //.map((response:Response) => {
+  //    response.json();
+//    })
+    //  .catch((error: any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
 
-      }) // ...and calling .json() on the response to return data
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
   }
 
 }
