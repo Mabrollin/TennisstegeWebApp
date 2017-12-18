@@ -1,14 +1,14 @@
 <div class="container">
   <div class="left">
-    Mock Icon ;D
-  </div>
-  <div class="right">
-    <div class="" [hidden]="hasLoggedInUser()">
-        <startnavbar></startnavbar>
-    </div>
-    <div class=""[hidden]="!hasLoggedInUser()">
-      <usernavbar></usernavbar>
+    <div class="logo">
+    <img width="180px" height="90px" src="assets/svg/logo.svg" alt="">  
     </div>
 
   </div>
+
+    <div class="navlinks">
+      <startnavbar *ngIf="!hasLoggedInUser()" [@panelInOut]></startnavbar>
+      <usernavbar *ngIf="hasLoggedInUser()" [@panelInOut]></usernavbar>
+    </div>
+
 </div>

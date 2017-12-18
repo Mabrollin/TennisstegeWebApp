@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { Router} from '@angular/router';
-import { Player } from '../_properties/player';
 import { LoginService } from '../_services/loginservice';
 import { HostBinding, ElementRef, EventEmitter} from '@angular/core';
 import {
@@ -45,15 +44,11 @@ export class Login {
   passwordFieldErrorMessage: string = null;
   state: string;
 
-  player: Player;
   username: string;
   password: string;
 
   constructor(private loginService: LoginService, private router: Router) { }
   ngOnInit(){
-    if(localStorage.getItem('currentUser')!== null){
-      //this.router.navigate(['/profile']);
-    }
   }
 ngAfterInit(){
   this.state = 'init';

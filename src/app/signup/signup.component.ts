@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NewPlayer } from '../_properties/newPlayer';
+import { NewPlayer } from '../_properties';
 import { Router} from '@angular/router';
-import { Player } from '../_properties/player';
 import { SignupService } from '../_services/signupservice'
 import {Output, ElementRef, EventEmitter} from '@angular/core';
 import {
@@ -25,45 +24,67 @@ import { swipeAnimation } from '../_animations';
 })
 
 export class Signup {
-    state: string;
-    player: Player;
+  state: string;
 
-    username: string;
-    password: string;
-    passwordConfirm: string;
-    firstname: string;
-    lastname: string;
-    email: string;
-    emailConfirm: string;
-    phoneNumber: string;
+  username: string;
+  password: string;
+  passwordConfirm: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  emailConfirm: string;
+  phoneNumber: string;
 
-    usernameError: string;
-    passwordError: string;
-    passwordConfirmError: string;
-    firstnameError: string;
-    lastnameError: string;
-    emailError: string;
-    emailConfirmError: string;
-    phoneNumberError: string;
+  usernameError: string;
+  passwordError: string;
+  passwordConfirmError: string;
+  firstnameError: string;
+  lastnameError: string;
+  emailError: string;
+  emailConfirmError: string;
+  phoneNumberError: string;
 
-    constructor(private signupService: SignupService, private router: Router) { }
-  ngAfterInit(){
+  constructor(private signupService: SignupService, private router: Router) { }
+  ngAfterInit() {
     this.state = 'init';
   }
   validateBefore(): boolean {
     let isValid = true;
     //this.validateUsername();
-    if(!this.username ){
+    if (!this.username) {
       isValid = false;
       this.usernameError = "för kort namn";
     }
 
     return isValid;
   }
+  handleChangeUsernameEvent(username: string): void{
+      this.username = username;
+  }
+  handleChangePasswordEvent(password: string): void{
+      this.password = password;
+  }
+  handleChangePasswordConfirmEvent(password: string): void{
+      this.passwordConfirm = password;
+  }
+  handleChangeFirstnameEvent(firstName: string): void{
+      this.firstName = firstName;
+  }
+  handleChangeLastnameEvent(lastName: string): void{
+      this.lastName = lastName;
+  }
+  handleChangeEmailEvent(email: string): void{
+      this.email = email;
+  }
+  handleChangeEmailConfirmEvent(email: string): void{
+      this.emailConfirm = email;
+  }
+  handleChangePhoneEvent(phoneNumber: string): void{
+      this.phoneNumber = phoneNumber;
+  }
   register() {
     this.validateBefore();
-    let player = new NewPlayer(this.username, this.firstname, this.lastname, this.email, this.phoneNumber, this.password);
-    console.log("försöker... ");
+    let player = new NewPlayer(this.username, this.firstName, this.lastName, this.email, this.phoneNumber, this.password);
     let operation = this.signupService.signupPlayer(player);
     operation.subscribe(
       res => {
@@ -74,8 +95,8 @@ export class Signup {
       }
     );
   }
-  back(): void{
-    this.router.navigate(['/home']);
+  back(): void {
+    this.router.navigate(['/options']);
   }
 
 }

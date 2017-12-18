@@ -1,3 +1,8 @@
+.container{
+  height: 100%;
+  width: 100%;
+
+}
 .content{
   height: 100%;
   display: flex;
@@ -5,6 +10,19 @@
   justify-content: center;
   align-items: center;
   margin-top: 20%;
+}
+.wraperDisabled {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 2;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 .background{
   z-index: -10;
