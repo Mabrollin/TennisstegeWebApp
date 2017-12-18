@@ -1,5 +1,37 @@
-<div class="pane">
-  <div class="ladderplayer" *ngFor="let player of players; let position = index">
-    <ladderplayer  [player]="player" [position]="position"></ladderplayer>
-  </div>
+<div class="popup">
+    <newChallengePopup *ngIf="challengedPlayer"  [challengedPlayer]="challengedPlayer" (submitEvent)='handleSubmitNewChallengeEvent($event)'></newChallengePopup>
+    <scoringTable *ngIf="recordChallenge" [challengerPlayer]="recordChallenge.challengerPlayerName" [challengedPlayer]="recordChallenge.challengedPlayerName" (submitEvent)='handleSubmitRecordEvent($event)'></scoringTable>
+</div>
+
+  <div class="container">
+
+    <div class="contentRow">
+      <div class="ladderName">
+        {{ladder.ladderName}}
+      </div>
+    </div>
+    <div class="contentRow">
+      <div class="leaderBoard">
+        <div class="player" *ngFor="let player of ladder.players" [ngClass]="{'selfPlayer': isLoggedInPlayer(player.username)}">
+          {{player.username}} --- {{player.rating}}
+          <button type="button" name="button" (click)="issueChallenge(player.username)">Utmana</button>
+        </div>
+      </div>
+      <div class="challenges">
+        <div class="challenge" *ngFor="let challenge of getLoggedInPlayersChallenges()">
+          <div *ngIf="isLoggedInPlayer(challenge.challengedPlayerName)">
+          Du är utmanad av: {{challenge.challengerPlayerName}} den {{challenge.creationDate}}
+          </div>
+          <div *ngIf="isLoggedInPlayer(challenge.challengerPlayerName)">
+          Du har utmanat: {{challenge.challengedPlayerName}} den {{challenge.creationDate}}
+          </div>
+          <button type="" name="button" (click)="issueRecordMatch(challenge)">Rapportera Match</button>
+        </div>
+      </div>
+      <div class="record">
+
+      </div>
+    </div>
+
+
 </div>

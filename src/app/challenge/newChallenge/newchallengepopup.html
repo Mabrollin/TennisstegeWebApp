@@ -1,0 +1,13 @@
+<div class="container" @swipeAnimation>
+  Du vill utmana {{challengedPlayer}}!!
+  <br>
+  <br>
+  Välj Datum för matchen:
+  <form action="javascript:void(0);">
+    <input type="text" [(ngModel)]="date" [ngModelOptions]="{standalone: true}">
+    <br>
+    <button type="submit" (click)="submit()">Skicka utmaning!</button>
+    <button type="cancel" (click)="cancel()">Avbryt</button>
+  </form>
+
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserInfoService } from '../_services/userinfoservice';
-import { User } from '../_properties/user';
+import { User } from '../_properties';
+import { swipeAnimation } from '../_animations';
 
 @Component({
   selector: 'profile',
@@ -8,6 +9,8 @@ import { User } from '../_properties/user';
   styleUrls: ['./profile.css'],
   templateUrl: './profile.html',
   providers: [UserInfoService],
+  animations: [swipeAnimation],
+  host: { '[@swipeAnimation]': '' },
 })
 
 export class Profile{
@@ -30,5 +33,9 @@ username: string;
 user: User;
   ngOnInit(){
 
+  }
+  getImage() {
+    //Mock
+    return '/assets/images/ester.JPG';
   }
 }

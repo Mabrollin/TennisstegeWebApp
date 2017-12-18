@@ -1,7 +1,23 @@
-.container{
+.container {
   display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.contactInfo {
+  order: 1;
 }
 
-.contactInfo{
+.profilePicture {
+  order: 2;
+}
+
+.LadderPanel {
   order: 1;
+}
+
+.moreInfo {
+  order: 2;
 }

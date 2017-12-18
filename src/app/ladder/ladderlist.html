@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="ladderLinkPaper" *ngFor="let ladder of ladders">
+    <a [routerLink]="['/ladder', ladder.ladderName]">
+    <div class="ladderLink">
+  {{ladder.ladderName}}
+    </div>
+  </a>
+
+  </div>
+  <div class="findLadderPaper">
+    <input class="findLadderField" type="text" name="" value="">
+  </div>
+</div>

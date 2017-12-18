@@ -15,6 +15,6 @@ export class Logout{
 constructor(private userSessionService: UserSessionService, private router: Router) { }
   ngOnInit(){
     this.userSessionService.logout();
-      this.router.navigate(['/home']);
+      this.router.navigate(['/options']);
   }
 }

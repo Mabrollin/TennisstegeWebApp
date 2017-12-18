@@ -4,22 +4,22 @@ import { HttpModule }    from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
+import { UserSessionService, AuthInterceptor, ShadowService} from "./_services";
 import { Navbar, StartNavbar, UserNavbar } from './navbar';
 import { Login } from './login';
+import { NewChallengePopup, GameScore, ScoringTable } from './challenge';
 import { Logout } from './logout';
-import { Ladder } from './ladder';
+import { Ladder, LadderList } from './ladder';
 import { Home } from './home.component';
 import { BallCanvas } from './background';
-import { Profile, ContactInfoPanel } from './profile';
+import { Profile, ContactInfoPanel, AboutProfilePanel, LadderProfilePanel } from './profile';
 import { Signup } from './signup';
 import { LoginOptions } from './login';
-import { LadderPlayer } from "./ladder";
 import { InputField } from "./input";
-import { UserSessionService } from "./_services/usersessionservice";
 import { AuthGuard } from './auth/authguard';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from "./_services/authInterceptor.service";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -28,37 +28,29 @@ import { AppComponent }  from './app.component';
 
 
 export const appRoutes: Routes = [
-  { path: '',component: LoginOptions},
-  { path: 'home', component: Home},
-  { path: 'ladders', component: Ladder},
-  { path: 'profile', canActivate: [AuthGuard], component: Profile},
-  // { path: 'home',   component: Home, children:[
-  //   { path: '**',  component: LoginOptions}
-  // ]},
-
-  { path: 'login', component: Login, data:{animation : "Login"}  },
-  { path: 'logout', component: Logout},
-  { path: 'options',  component: LoginOptions, data:{animation : "Options"}  },
-  { path: 'loginoptions',  component: LoginOptions, data:{animation : "Options"}  },
-  { path: 'signup',  component: Signup, data:{animation : "Signup"}  }
-  // { path: 'login',   component: Home, children:[
-  //   { path: '**',  component: Login, data:{animation : "Login"}  }
-  // ]},
-  // { path: 'signup',   component: Home, children:[
-  //   { path: '**', component: Signup, data:{animation : "signup"}}
-  // ]}
+  { path: 'test', component: ScoringTable },
+  { path: '', component: LoginOptions },
+  { path: 'home', component: Home },
+  { path: 'ladders', component: LadderList, data: { animation: "Ladders" } },
+  { path: 'ladder/:name', component: Ladder, data: { animation: "Ladder" } },
+  { path: 'profile', canActivate: [AuthGuard], component: Profile, data: { animation: "Profile" } },
+  { path: 'login', component: Login, data: { animation: "Login" } },
+  { path: 'logout', component: Logout },
+  { path: 'options', component: LoginOptions, data: { animation: "Options" } },
+  { path: 'loginoptions', component: LoginOptions, data: { animation: "Options" } },
+  { path: 'signup', component: Signup, data: { animation: "Signup" } }
 ];
 
 
 @NgModule({
-  imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule, HttpClientModule, FormsModule, BrowserAnimationsModule ],
-  exports:      [ RouterModule],
-  declarations: [ AppComponent, Navbar, StartNavbar, UserNavbar, Ladder, LadderPlayer, Home, Login, Logout, Signup, Profile, BallCanvas, LoginOptions, InputField, ContactInfoPanel],
-  providers:    [ UserSessionService, AuthGuard, {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    } ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpModule, HttpClientModule, FormsModule, BrowserAnimationsModule],
+  exports: [RouterModule],
+  declarations: [AppComponent, Navbar, StartNavbar, UserNavbar, Ladder, LadderList, Home, Login, Logout, Signup, Profile, BallCanvas, NewChallengePopup, GameScore, ScoringTable, LoginOptions, InputField, ContactInfoPanel,  AboutProfilePanel, LadderProfilePanel],
+  providers: [UserSessionService, ShadowService, AuthGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

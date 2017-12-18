@@ -1,0 +1,15 @@
+.container{
+width: 380px;
+height: 200px;
+background-color: white;
+border-radius: 20px;
+padding: 20px;
+}
+button {
+  font-size: 16px;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 24px;
+  border: none;
+}

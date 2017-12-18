@@ -1,0 +1,14 @@
+<div class="container" @swipeAnimation>
+  <input type="text" [(ngModel)]="duration" placeholder="hh:mm" maxlength="5">
+  <div class="playerNames">
+    <div value="playerName">{{challengerPlayer}}</div>
+    <div value="playerName">{{challengedPlayer}}</div>
+  </div>
+  <gameScore gameType="set" (scoreChangeEvent)='handleSetScoreChangeEvent($event)'></gameScore>
+
+  <gameScore *ngFor="let game of games" gameType="game" (scoreChangeEvent)='handleGameScoreChangeEvent($event, game)' [@anim]="game[2]"></gameScore>
+  <div class="buttons">
+    <button type="submit" (click)="submit()" class="sendButton">Rapportera</button>
+    <button type="cancel" (click)="cancel()" class="cancelButton">Avbryt</button>
+  </div>
+</div>

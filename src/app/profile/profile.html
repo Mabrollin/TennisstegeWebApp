@@ -1,7 +1,20 @@
 <div class="container">
+<div class="row">
   <div class="contactInfo">
     <contactInfoPanel [info]="user.contactInfo"></contactInfoPanel>
   </div>
-  hello {{user.username}}!
+  <div class="profilePicture">
+    <img [src]="getImage()" alt="" height="200px">
+  </div>
+</div>
+<div class="row">
+  <div class="LadderPanel" >
+    <ladderProfilePanel [ladders]="user.ladderParticipation"></ladderProfilePanel>
+  </div>
+  <div class="moreInfo" >
+    <aboutProfilePanel info="Hej"></aboutProfilePanel>
+  </div>
+</div>
+
 
 </div>

@@ -1,5 +1,5 @@
-import { LadderParticipation } from "./ladderParticipation";
-import { ContactInfo } from "./ContactInfo";
+import { LadderParticipation } from "./ladderparticipation";
+import { ContactInfo } from "./contactinfo";
 export class User {
   constructor(){
     this.ladderParticipation = [];

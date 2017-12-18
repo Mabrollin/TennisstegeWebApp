@@ -1,0 +1,90 @@
+.container {
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.scoreRow {
+  display: flex;
+  flex-direction: row;
+}
+.scoreController {
+  display: flex;
+  flex-direction: row;
+}
+.scorePanel {
+  display: flex;
+  flex-direction: column;
+}
+.panel {
+background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.pillar {
+  background-color: gray;
+  height: 40px;
+  width: 10px;
+}
+.rightButton {
+  font-size: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  user-select: none;
+  cursor: pointer;
+}
+.leftButton {
+  font-size: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+  user-select: none;
+  cursor: pointer;
+}
+.ballRod {
+  margin-top: 10px;
+  height: 3px;
+  background-color: gray;
+  width: 100%;
+
+
+}
+.scoreBalls {
+  position: relative;
+  top: -35px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 2px;
+  z-index: 10;
+  margin-right: 32px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.scoreBallsReverse {
+  position: relative;
+  top: -35px;
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 10;
+  margin-right: 32px;
+  margin-left: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.scoreBall {
+  background-color: red;
+  height: 15px;
+  width: 15px;
+  border: none;
+  border-radius: 15px;
+}
+.ballColorWhite {
+  background-color: white;
+  border-width: 1px;
+}
+
+.ballColorRed {
+  background-color: red
+}

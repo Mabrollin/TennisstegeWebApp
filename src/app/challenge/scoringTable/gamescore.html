@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="scoreRow">
+    <div class="scoreController">
+      <div class="rightButton" (click)="increaseLeft()">
+        +
+      </div>
+      <div class="scorePanel">
+        <div class="panel">
+          <div class="pillar"></div>
+          <div class="ballRod"></div>
+          <div class="pillar"></div>
+        </div>
+        <div class="scoreBalls" [@shake]='leftShakeState' (@shake.done)="leftShakeState = leftShakeState ==='shake'?'':leftShakeState">
+          <div class="scoreBall" [ngClass]="{'ballColorWhite': gameType==='game', 'ballColorRed': gameType==='set'}" [@ballState]="getLeftState(ball)" [@ballSide]="getLeftSide(ball)" (@ballState.done)="leftShakeState = 'shake'" *ngFor="let ball of balls"></div>
+        </div>
+
+      </div>
+      <div class="leftButton" (click)="decreaseLeft()">
+        -
+      </div>
+    </div>
+    <div class="scoreController">
+      <div class="rightButton" (click)="decreaseRight()">
+        -
+      </div>
+      <div class="scorePanel">
+        <div class="panel">
+          <div class="pillar"></div>
+          <div class="ballRod"></div>
+          <div class="pillar"></div>
+        </div>
+        <div class="scoreBallsReverse" [@shake]='rightShakeState' (@shake.done)="rightShakeState = rightShakeState ==='shake'?'':rightShakeState">
+          <div class="scoreBall" [ngClass]="{'ballColorWhite': gameType==='game', 'ballColorRed': gameType==='set'}" [@ballState]="getRightState(ball)" [@ballSide]="getRightSide(ball)" (@ballState.done)="rightShakeState = 'shake'" *ngFor="let ball of balls"></div>
+        </div>
+      </div>
+      <div class="leftButton" (click)="increaseRight()">
+        +
+      </div>
+    </div>
+  </div>
+</div>

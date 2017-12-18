@@ -1,10 +1,47 @@
-.pane{
-  background: #e572bd;
-  width: 600px;
-  border: solid;
-  border-color: #f90074;
-  border-radius: 25px;
+.container {
+  display: flex;
+  flex-direction: column;
+  background: white;
 }
-.ladderplayer{
-  padding: 10px;
+
+.popup {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.contentRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.ladderName {
+  font-size: 48px;
+  text-decoration: underline;
+  padding: 24px;
+}
+
+.leaderBoard {
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+}
+
+.player {
+  margin: 8px;
+  padding: 8px;
+  background-color: white;
+}
+
+.selfPlayer {
+  background-color: pink;
 }
