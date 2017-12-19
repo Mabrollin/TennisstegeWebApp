@@ -23,7 +23,6 @@ export class ChallengeService {
     let headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post(this.baseURL + this.newChallengeURL, bodyString)
-      .map((res: Response) => res.text())
       .catch((error: any) => Observable.throw(error || 'Server error'));
   }
   record(challengeId: number, record: Record): Observable<Response> {
@@ -31,7 +30,6 @@ export class ChallengeService {
     let headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.put(this.baseURL + "/" + challengeId + this.recordURL, bodyString)
-      .map((res: Response) => res.text())
       .catch((error: any) => Observable.throw(error || 'Server error'));
   }
 

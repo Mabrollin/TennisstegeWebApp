@@ -42,7 +42,7 @@ export class NewChallengePopup{
   @Output("submitEvent")
   submitEvent: EventEmitter<NewChallenge> = new EventEmitter<NewChallenge>();
 
-  date: string;
+  dateString: string;
 
   constructor() {
   }
@@ -52,8 +52,11 @@ cancel(){
 submit() {
   let newChallenge: NewChallenge = new NewChallenge();
   newChallenge.challengedPlayer = this.challengedPlayer;
-  newChallenge.date = this.date;
+  newChallenge.date = this.dateString;
   this.submitEvent.emit(newChallenge);
+}
+handleChangeDateTimeEvent(newString: string){
+  this.dateString = newString;
 }
 
 }

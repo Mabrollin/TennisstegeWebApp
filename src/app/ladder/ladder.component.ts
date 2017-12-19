@@ -27,20 +27,23 @@ export class Ladder implements OnInit {
   }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      let ladderName = params['name']; // (+) converts string 'id' to a number
-      this.ladderService.getLadder(ladderName).
-        subscribe(
-        (data: LadderRepresentation) => {
-          this.ladder = data;
-        },
-        error => {
-          console.log(error);
-        }
-        );
-    });
+    this.loadLadderRepresentation();
   }
 
+loadLadderRepresentation() {
+  this.sub = this.route.params.subscribe(params => {
+    let ladderName = params['name']; // (+) converts string 'id' to a number
+    this.ladderService.getLadder(ladderName).
+      subscribe(
+      (data: LadderRepresentation) => {
+        this.ladder = data;
+      },
+      error => {
+        console.log(error);
+      }
+      );
+  });
+}
   isLoggedInPlayer(player: string): boolean {
     return this.userSessionService.getCurrentUser() === player;
   }
@@ -66,7 +69,8 @@ export class Ladder implements OnInit {
     this.challengeService.newChallenge(challenge).
     subscribe(
     (data) => {
-      console.log(data)
+      console.log(data);
+      this.loadLadderRepresentation();
     },
     error => {
       console.log(error);
@@ -78,13 +82,13 @@ export class Ladder implements OnInit {
     this.recordChallenge = challenge;
   }
   handleSubmitRecordEvent(record: Record) {
-    record.duration =  "PT10H16M" 
+    record.duration =  "PT10H16M"
     this.shadowService.setShadow(false);
 
     this.challengeService.record(this.recordChallenge.id, record).
     subscribe(
     (data) => {
-      console.log(data)
+      console.log(data);
     },
     error => {
       console.log(error);
