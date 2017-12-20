@@ -4,8 +4,8 @@ import { trigger, state, animate, transition, style, keyframes, sequence } from 
 @Component({
   selector: 'scoringTable',
   moduleId: module.id,
-  styleUrls: ['./scoringTable.css'],
-  templateUrl: './scoringTable.html',
+  styleUrls: ['./scoringtable.css'],
+  templateUrl: './scoringtable.html',
   animations: [
     trigger('swipeAnimation', [
       // end state styles for route container (host)
