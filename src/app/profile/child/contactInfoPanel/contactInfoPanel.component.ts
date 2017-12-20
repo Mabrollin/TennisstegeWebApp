@@ -5,8 +5,8 @@ import { ContactInfo } from '../../../_properties';
 @Component({
   selector: 'contactInfoPanel',
   moduleId: module.id,
-  styleUrls: ['./contactInfoPanel.css'],
-  templateUrl: './contactInfoPanel.html',
+  styleUrls: ['./contactinfopanel.css'],
+  templateUrl: './contactinfopanel.html',
   providers: [UserInfoService],
 })
 

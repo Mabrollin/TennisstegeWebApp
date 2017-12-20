@@ -3,8 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'aboutProfilePanel',
   moduleId: module.id,
-  styleUrls: ['./aboutProfilePanel.css'],
-  templateUrl: './aboutProfilePanel.html',
+  styleUrls: ['./aboutprofilepanel.css'],
+  templateUrl: './aboutprofilepanel.html',
 })
 
 export class AboutProfilePanel{

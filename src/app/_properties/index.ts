@@ -6,5 +6,5 @@ export * from './ladderplayer';
 export * from './newplayer';
 export * from './record';
 export * from './user';
-export * from './newChallenge';
+export * from './newchallenge';
 export * from './score';

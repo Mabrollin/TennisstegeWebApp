@@ -1,3 +1,3 @@
-export * from './contactInfoPanel/contactInfoPanel.component';
-export * from './ladderProfilePanel/ladderProfilePanel.component';
-export * from './aboutProfilePanel/aboutProfilePanel.component';
+export * from './contactinfopanel/contactInfopanel.component';
+export * from './ladderprofilepanel/ladderprofilepanel.component';
+export * from './aboutprofilepanel/aboutprofilepanel.component';
