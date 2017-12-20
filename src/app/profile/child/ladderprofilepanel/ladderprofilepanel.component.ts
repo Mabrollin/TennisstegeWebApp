@@ -4,8 +4,8 @@ import { LadderParticipation } from '../../../_properties';
 @Component({
   selector: 'ladderProfilePanel',
   moduleId: module.id,
-  styleUrls: ['./ladderProfilePanel.css'],
-  templateUrl: './ladderProfilePanel.html',
+  styleUrls: ['./ladderprofilepanel.css'],
+  templateUrl: './ladderprofilepanel.html',
 })
 
 export class LadderProfilePanel{
