@@ -1,2 +1,2 @@
-export * from './newChallenge/newchallengepopup.component';
+export * from './newchallenge/newchallengepopup.component';
 export * from './scoringTable';
