@@ -7,7 +7,6 @@ import {
   transition,
   keyframes
 } from '@angular/animations';
-import get from "lodash-es/get"
 @Component({
   selector: 'inputfield',
   moduleId: module.id,
@@ -62,7 +61,7 @@ export class InputField {
   @Input() errorMessage: string;
   @Input() type: string;
 
-  inputString: string;
+  inputText: string;
   state: string = "notSelected";
   @Output("changeEvent")
   changeEvent: EventEmitter<string> = new EventEmitter<string>();
@@ -76,15 +75,13 @@ export class InputField {
     return this.errorMessage && this.errorMessage.length != 0;
   }
   handleChange(): void {
-
-    var input: string = this.inputElement.nativeElement.value;
-    console.log(input);
-    if (get(this.inputElement, "nativeElement.value", []).length === 0) {
+    console.log(this.inputText);
+    if (!this.inputText || this.inputText === "") {
       this.state = "noInput"
     }
     else {
       this.state = "hasInput";
-      this.changeEvent.emit(input);
+      this.changeEvent.emit(this.inputText);
 
     }
 
