@@ -1,13 +1,16 @@
 <div class="background">
   <ballcanvas></ballcanvas>
 </div>
+<div [ngClass]="{'shadowWrapper':shadowService.getShadow()}">
 
+</div>
 <div class="container">
-  <div [ngClass]="{'wraperDisabled': shadowService.getShadow()}">
-
-  </div>
-  <navbar></navbar>
   <div class="content">
     <router-outlet></router-outlet>
   </div>
+  <div class="navbar">
+    <navbar></navbar>
+  </div>
+
+
 </div>

@@ -20,7 +20,7 @@ public currentUser: string;
     this.currentUser = userSessionService.getCurrentUser();
   }
 
-  private baseUserURL = 'http://localhost:8080/user/';
+  private baseUserURL = 'http://tennisstege.eu-west-2.elasticbeanstalk.com/user/';
   private getURL = '/getContactInfo'
 
 

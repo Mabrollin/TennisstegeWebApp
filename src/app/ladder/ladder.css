@@ -17,6 +17,21 @@
     transform: translate(-50%, -50%);
   z-index: 10;
 }
+.shadowWrapper {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: -50%;
+  right: -50%;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 2;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+}
 
 .contentRow {
   display: flex;

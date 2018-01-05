@@ -13,7 +13,7 @@ import 'rxjs/add/operator/catch';
 export class ChallengeService {
   constructor(private http: HttpClient) { }
 
-  private baseURL = 'http://localhost:8080/challenge';
+  private baseURL = 'http://tennisstege.eu-west-2.elasticbeanstalk.com/challenge';
   private newChallengeURL = '/new';
   private recordURL = '/record';
 

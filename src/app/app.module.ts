@@ -30,7 +30,7 @@ import { AppComponent }  from './app.component';
 export const appRoutes: Routes = [
   { path: 'test', component: ScoringTable },
   { path: '', component: LoginOptions },
-  { path: 'home', component: Home },
+  { path: 'home', component: Profile },
   { path: 'ladders', component: LadderList, data: { animation: "Ladders" } },
   { path: 'ladder/:name', component: Ladder, data: { animation: "Ladder" } },
   { path: 'profile', canActivate: [AuthGuard], component: Profile, data: { animation: "Profile" } },

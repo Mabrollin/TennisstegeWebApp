@@ -1,28 +1,30 @@
 .container{
   height: 100%;
   width: 100%;
-
-}
-.content{
-  height: 100%;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20%;
-}
-.wraperDisabled {
   position: absolute;
-  left: 0;
-  right: 0;
+}
+.shadowWrapper {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
   height: 100%;
   width: 100%;
   background-color: black;
   opacity: 0.5;
-  z-index: 2;
   -webkit-transition: background-color 0.2s ease-out;
   -moz-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
+}
+.navbar {
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.content{
+
+  left: 50%;
+  top: 50%;
+  position: absolute;
 }
 .background{
   z-index: -10;

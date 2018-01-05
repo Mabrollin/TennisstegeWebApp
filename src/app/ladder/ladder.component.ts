@@ -64,36 +64,44 @@ loadLadderRepresentation() {
     this.challengedPlayer = undefined;
     this.shadowService.setShadow(false);
 
-    challenge.ladder = this.ladder.ladderName;
-    challenge.challengerPlayer = this.userSessionService.getCurrentUser();
-    this.challengeService.newChallenge(challenge).
-    subscribe(
-    (data) => {
-      console.log(data);
-      this.loadLadderRepresentation();
-    },
-    error => {
-      console.log(error);
-    }
-    );
+
+
+if(challenge != null){
+  challenge.ladder = this.ladder.ladderName;
+  challenge.challengerPlayer = this.userSessionService.getCurrentUser();
+  this.challengeService.newChallenge(challenge).
+  subscribe(
+  (data) => {
+    console.log(data);
+    this.loadLadderRepresentation();
+  },
+  error => {
+    console.log(error);
+  }
+  );
+}
+
+
   }
   issueRecordMatch(challenge: Challenge){
     this.shadowService.setShadow(true);
     this.recordChallenge = challenge;
   }
   handleSubmitRecordEvent(record: Record) {
-    record.duration =  "PT10H16M"
     this.shadowService.setShadow(false);
 
-    this.challengeService.record(this.recordChallenge.id, record).
-    subscribe(
-    (data) => {
-      console.log(data);
-    },
-    error => {
-      console.log(error);
+    if(record != null){
+      this.challengeService.record(this.recordChallenge.id, record).
+      subscribe(
+      (data) => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+      );
     }
-    );
+
 
     this.recordChallenge = undefined;
   }

@@ -90,7 +90,7 @@ this.passwordFieldErrorMessage = null;
   return !!this.passwordFieldErrorMessage;
   }
   back(): void{
-    this.router.navigate(['/home']);
+    this.router.navigate(['/options']);
   }
 
 }

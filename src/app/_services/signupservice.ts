@@ -12,7 +12,7 @@ import 'rxjs/add/operator/catch';
 export class SignupService {
   constructor(private http: Http) { }
 
-  private registerURL = 'http://localhost:8080/sign-up';
+  private registerURL = 'http://tennisstege.eu-west-2.elasticbeanstalk.com/sign-up';
 
 
   signupPlayer(newPlayer: NewPlayer) : Observable<Response> {

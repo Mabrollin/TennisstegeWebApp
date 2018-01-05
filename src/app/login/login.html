@@ -1,9 +1,14 @@
 <div class="loginBox" [@shake]='state' (@shake.done)="state = ''">
   <form class="" action="javascript:void(0);" method="post">
-  <inputfield label="Användarnamn" [errorMessage]="usernameFieldErrorMessage" class="userNameField" (changeEvent)='handleChangeUsernameEvent($event)' type="text"></inputfield>
-  <inputfield label="Lösenord" [errorMessage]="passwordFieldErrorMessage" class="passwordField" (changeEvent)='handleChangePasswordEvent($event)' type="password"></inputfield>
-    <button class="loginButton" type="submit" (click)="login(username, password); ">Logga in</button>
-    <button class="backButton" type="button" (click)="back(); ">Backa</button>
+  <div class="inputContainer">
+    <inputfield label="Användarnamn" [errorMessage]="usernameFieldErrorMessage" (changeEvent)='handleChangeUsernameEvent($event)' type="text"></inputfield>
+    <inputfield label="Lösenord" [errorMessage]="passwordFieldErrorMessage" (changeEvent)='handleChangePasswordEvent($event)' type="password"></inputfield>
+  </div>
+<div class="buttonContainer">
+  <button class="loginButton" type="submit" (click)="login(username, password); ">Logga in</button>
+  <button class="backButton" type="button" (click)="back(); ">Backa</button>
+</div>
+
 
   <span class="errorMessage" ngShow='errorMessage !=""'>{{errorMessage}}</span>
   </form>

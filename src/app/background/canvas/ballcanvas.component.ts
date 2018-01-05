@@ -47,8 +47,8 @@ export class BallCanvas {
         this.z = z;
 
         this.dx = (Math.random() - 0.5) * 0.25;
-        this.dy = 0;//(Math.random()-0.5) * 0.0003;
-        this.dz = (Math.random() - 0.5) * 0.47;
+        this.dy = (Math.random() - 0.5) * 0.0003;
+        this.dz = (Math.random() - 0.5) * (0.0015 * width);
         this.size = 10;
       }
 
@@ -76,18 +76,12 @@ export class BallCanvas {
           ctx.fillStyle = '#e2f442';
           ctx.stroke();
           ctx.fill();
-          //  ctx.rect(offsetX,
-          //    offsetY,
-          //    pixelContextX,
-          //    pixelContextY);
-          //    ctx.stroke();
-
         }
 
       }
       update(time: number) {
         //time updates
-        this.dy += 0.00002 * time * time;
+        this.dy += 0.0004 * time;
 
         this.x += time * this.dx;
         this.y += time * this.dy;
@@ -117,8 +111,12 @@ export class BallCanvas {
           this.dz *= -1.0;
         }
         if ((this.z) < zMin) {
+          //to compensate for the aprox-errors due to "gravity"
+          if(this.dy < 0.25){
+            this.dy = 0.5;
+          }
           this.z = zMin;
-          this.dz *= -1, 0;
+          this.dz *= -1.0;
         }
 
 
@@ -134,7 +132,6 @@ export class BallCanvas {
     // happy drawing from here on
 
     var timeStamp = new Date();
-    var clippingPlane = 4.0;
 
     const cm = 38;
     const height = this.canvas.nativeElement.offsetHeight;
@@ -144,15 +141,17 @@ export class BallCanvas {
 
     console.log(height, width);
 
-    var xMax = 300.0;
-    var xMin = -300.0;
+    var xMax = width/2;
+    var xMin = -width/2;
     var xLen = Math.abs(xMax) + Math.abs(xMin);
-    var yMax = 200.0//200.0;
+    var yMax = height//200.0;
     var yMin = 0.0 //0.0;
     var yLen = Math.abs(yMax) + Math.abs(yMin);
-    var zMax = 100.0;
-    var zMin = -1.0;
+    var zMax = width;
+    var zMin = 0.0;
     var zLen = Math.abs(zMax) + Math.abs(zMin);
+
+    var clippingPlane = width/66;
 
     let balls: Ball[] = [];
     for (let i = 0; i < 7; i++) {

@@ -15,7 +15,7 @@ export class LoginService {
 
   }
 
-  private loginURL = 'http://localhost:8080/login';
+  private loginURL = 'http://tennisstege.eu-west-2.elasticbeanstalk.com/login';
 
     private headers = new Headers({'Content-Type': 'application/json'});
 

@@ -1,3 +1,6 @@
+<div [ngClass]="{'shadowWrapper':shadowService.getShadow()}">
+
+</div>
 <div class="popup">
     <newChallengePopup *ngIf="challengedPlayer"  [challengedPlayer]="challengedPlayer" (submitEvent)='handleSubmitNewChallengeEvent($event)'></newChallengePopup>
     <scoringTable *ngIf="recordChallenge" [challengerPlayer]="recordChallenge.challengerPlayerName" [challengedPlayer]="recordChallenge.challengedPlayerName" (submitEvent)='handleSubmitRecordEvent($event)'></scoringTable>

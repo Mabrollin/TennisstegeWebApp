@@ -8,50 +8,28 @@
   flex-direction: column;
 }
 
-.usernameContainer {
-
+.rowContainer {
   display: flex;
 
 }
-
-.passwordContainer {
-
-  display: flex;
+@media(max-width: 640px) {
+  .rowContainer {
+    flex-wrap: wrap;
+  }
 }
 
-.nameContainer {
-
-  display: flex;
+.inputContainer{
+  background-color: #FFF;
+  padding-bottom: 16px;
 }
 
-.contactContainer {
-
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.buttonContainer {
-  order: 5;
-  display: flex;
-}
-inputfield{
-  margin-right: 20px;
-}
-hr{
-  height: 1px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-span {
-  padding-left: 16px;
-  width: 120px;
-  margin-bottom: 22px;
+.buttonContainer{
+  justify-content: center
 }
 
 button {
   font-size: 16px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px;
   border: 0;
   border-radius: 16px;
   height: 32px;
@@ -60,7 +38,6 @@ button {
 
 .registerButton {
   margin-top: 12px;
-margin-left: 40px;
   background-color: #95e26f;
   color: #FFF;
 }
@@ -71,7 +48,6 @@ margin-left: 40px;
 }
 
 .backButton {
-  margin-left: 60px;
   margin-top: 12px;
   background-color: #e572bd;
 }

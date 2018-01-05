@@ -3,25 +3,25 @@
   padding: 0;
   padding-top: 24px;
   background-color: none;
-  width: 320px;
-  height: 250px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   z-index: 20;
-  
-}
-.userNameField{
-order: 1;
 
 }
 
-.passwordField{
-order: 2;
+
+.inputContainer{
+  background-color: #FFF;
+  padding-bottom: 16px;
 }
 .errorField{
   border-color: #d60000;
+}
+
+.buttonContainer{
+  margin-top:20px;
 }
 button{
   border: 0;
@@ -32,21 +32,15 @@ button{
 }
 .loginButton{
 margin-bottom: 12px;
-  order: 3;
   background-color: #e572bd;
 }
 .loginButton:hover{
   background-color: #f90074;
 }
 .backButton{
-  order: 4;
   background-color: #e572bd;
 }
 .backButton:hover{
 
   background-color: #f90074;
-}
-.errorMessage{
-  color: #d60000;
-  order: 5;
 }
