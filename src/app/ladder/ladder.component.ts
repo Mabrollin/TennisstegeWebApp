@@ -30,20 +30,20 @@ export class Ladder implements OnInit {
     this.loadLadderRepresentation();
   }
 
-loadLadderRepresentation() {
-  this.sub = this.route.params.subscribe(params => {
-    let ladderName = params['name']; // (+) converts string 'id' to a number
-    this.ladderService.getLadder(ladderName).
-      subscribe(
-      (data: LadderRepresentation) => {
-        this.ladder = data;
-      },
-      error => {
-        console.log(error);
-      }
-      );
-  });
-}
+  loadLadderRepresentation() {
+    this.sub = this.route.params.subscribe(params => {
+      let ladderName = params['name']; // (+) converts string 'id' to a number
+      this.ladderService.getLadder(ladderName).
+        subscribe(
+        (data: LadderRepresentation) => {
+          this.ladder = data;
+        },
+        error => {
+          console.log(error);
+        }
+        );
+    });
+  }
   isLoggedInPlayer(player: string): boolean {
     return this.userSessionService.getCurrentUser() === player;
   }
@@ -56,7 +56,7 @@ loadLadderRepresentation() {
     );
   }
 
-  issueChallenge(challengedPlayer: string){
+  issueChallenge(challengedPlayer: string) {
     this.shadowService.setShadow(true);
     this.challengedPlayer = challengedPlayer;
   }
@@ -66,42 +66,42 @@ loadLadderRepresentation() {
 
 
 
-if(challenge != null){
-  challenge.ladder = this.ladder.ladderName;
-  challenge.challengerPlayer = this.userSessionService.getCurrentUser();
-  this.challengeService.newChallenge(challenge).
-  subscribe(
-  (data) => {
-    console.log(data);
-    this.loadLadderRepresentation();
-  },
-  error => {
-    console.log(error);
-  }
-  );
-}
+    if (challenge != null) {
+      challenge.ladder = this.ladder.ladderName;
+      challenge.challengerPlayer = this.userSessionService.getCurrentUser();
+      this.challengeService.newChallenge(challenge).
+        subscribe(
+        (data) => {
+          console.log(data);
+          this.loadLadderRepresentation();
+        },
+        error => {
+          console.log(error);
+        }
+        );
+    }
 
 
   }
-  issueRecordMatch(challenge: Challenge){
+  issueRecordMatch(challenge: Challenge) {
     this.shadowService.setShadow(true);
     this.recordChallenge = challenge;
   }
   handleSubmitRecordEvent(record: Record) {
     this.shadowService.setShadow(false);
 
-    if(record != null){
+    if (record != null) {
       this.challengeService.record(this.recordChallenge.id, record).
-      subscribe(
-      (data) => {
-        console.log(data);
-      },
-      error => {
-        console.log(error);
-      }
-      );
+        subscribe(
+        (data) => {
+          console.log(data);
+          this.loadLadderRepresentation();
+        },
+        error => {
+          console.log(error);
+        }
+        );
     }
-
 
     this.recordChallenge = undefined;
   }

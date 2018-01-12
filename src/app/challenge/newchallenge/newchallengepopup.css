@@ -1,8 +1,5 @@
 .container{
-width: 380px;
-height: 200px;
 background-color: white;
-border-radius: 20px;
 padding: 20px;
 }
 button {
@@ -12,4 +9,29 @@ button {
   padding-right: 16px;
   border-radius: 24px;
   border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+.challengeButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+
+.challengeButton{
+  align-self: flex-start;
+  background-color:#95e26f;
+}
+.challengeButton:hover{
+  background-color: #35e20f;
+}
+.cancelButton{
+  align-self: flex-end;
+  background-color: #e572bd;
+}
+.cancelButton:hover{
+  background-color: #f90074;
 }

@@ -57,8 +57,10 @@ export class ScoringTable {
 
   games: (number|string)[][] = [];
   sets: number[] = [0, 0];
-  duration: string;
   private nrOfGames = 6;
+
+  private durationHours;
+  private durationMinutes;
 
 constructor(){
   this.games = [];
@@ -100,7 +102,7 @@ constructor(){
     score.setsAndGames = setsAndGames;
     record.score = score;
     record.matchOutcome = this.getOutcome();
-    record.duration = this.duration;
+    record.duration = "PT" + this.durationHours + "H" + this.durationMinutes + "M";
     console.log(record);
     this.submitEvent.emit(record);
 

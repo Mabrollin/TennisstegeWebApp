@@ -36,15 +36,19 @@ button {
   width: 160px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .registerButton {
   margin-top: 12px;
   background-color: #95e26f;
-  color: #FFF;
+
 }
 
 .registerButton:hover {
   margin-top: 12px;
-  background-color: #a1e2af;
+  background-color: #35e20f;
 }
 
 .backButton {

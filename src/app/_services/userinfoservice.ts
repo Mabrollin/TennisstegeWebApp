@@ -4,7 +4,7 @@ import { Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { UserSessionService } from './usersessionservice';
 
-import { User } from '../_properties/user';
+import { User, ContactInfo } from '../_properties';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -21,12 +21,15 @@ public currentUser: string;
   }
 
   private baseUserURL = 'http://tennisstege.eu-west-2.elasticbeanstalk.com/user/';
-  private getURL = '/getContactInfo'
+  private updateURL = '/updateContactInfo'
 
 
   getContactInfo(): Observable<any> {
     return this.http.get<User>(this.baseUserURL+this.currentUser);
+  }
 
+  updateContactInfo(contactInfo: ContactInfo): Observable<any> {
+    return this.http.put<ContactInfo>(this.baseUserURL+this.currentUser + this.updateURL, contactInfo);
   }
 
 }

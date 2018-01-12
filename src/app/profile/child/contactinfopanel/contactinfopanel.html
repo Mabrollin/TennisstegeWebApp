@@ -1,20 +1,19 @@
 <div class="container">
   <div class="row">
-    <input type="text" [value]="info.firstName" [readonly]="!isEditMode()">
-    <input type="text" [value]="info.lastName" [readonly]="!isEditMode()">
+    <input type="text" [(ngModel)]="getInfo().firstName" [readonly]="!isEditMode()">
+    <input type="text" [(ngModel)]="getInfo().lastName" [readonly]="!isEditMode()">
   </div>
   <div class="row">
-    <input type="text" [value]="info.email" [readonly]="!isEditMode()">
-    <input type="text" [value]="info.phoneNumber" [readonly]="!isEditMode()">
+    <input type="text" [(ngModel)]="getInfo().email" [readonly]="!isEditMode()">
+    <input type="text" [(ngModel)]="getInfo().phoneNumber" [readonly]="!isEditMode()">
   </div>
 
-
-  <div class="" [hidden]="isEditMode()">
-    <button type="button" name="button" (click)="startEdit()">Redigera uppgifter</button>
+  <div class="buttons" *ngIf="!isEditMode()">
+    <button class="editButton" type="button" name="button" (click)="startEdit()">Redigera uppgifter</button>
   </div>
-  <div class="" [hidden]="!isEditMode()">
-    <button type="button" name="button" (click)="update()">Spara</button>
-    <button type="button" name="button" (click)="cancelEdit()">Cancel</button>
+  <div class="buttons" *ngIf="isEditMode()">
+    <button class="editButton" type="button" name="button" (click)="update()">Spara</button>
+    <button class="cancelButton" type="button" name="button" (click)="cancelEdit()">Cancel</button>
   </div>
 
 

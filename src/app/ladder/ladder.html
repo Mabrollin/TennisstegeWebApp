@@ -43,10 +43,11 @@
           </div>
         </div>
       </div>
-      <div class="challengesTitle">
-        Utmaningar
-      </div>
+
       <div class="challenges">
+        <div class="challengesTitle">
+          Utmaningar
+        </div>
         <div class="challenge" *ngFor="let challenge of getLoggedInPlayersChallenges()">
           <div class="flipContainer challengeCard" [ngClass]="{'flip':flipped==challenge}" (click)="flipped = flipped == challenge? null: challenge">
             <div class="flipFront">
@@ -61,14 +62,13 @@
 
             </div>
             <div class="flipBack">
-              <div class="recordButton" (click)="issueRecordMatch(challenge)">
-                Rapportera resultat
-              </div>
-              <div class="updateButton">
-                Boka om
-              </div>
-              <div class="cancelButton">
-                X
+              <div class="updateButtons">
+                <div class="recordButton" (click)="issueRecordMatch(challenge)">
+                  Rapportera resultat
+                </div>
+                <div class="cancelButton">
+                  X
+                </div>
               </div>
             </div>
           </div>

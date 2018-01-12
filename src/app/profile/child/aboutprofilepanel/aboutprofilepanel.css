@@ -6,35 +6,6 @@
   width: 100%;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
+.content {
   padding: 16px;
-}
-
-.contactInfo {
-  order: 1;
-}
-
-input {
-  width: 200px;
-  height: 40px;
-  font-size: 12px;
-  margin-right: 12px;
-  padding-left: 12px;
-}
-input:read-write {
-  color: gray;
-}
-input:read-write:focus {
-  background-color: blue;
-}
-
-button {
-  border: 0;
-  height: 24px;
-  width: 200px;
-  border-radius: 12px;
-  font-size: 12px;
-
 }

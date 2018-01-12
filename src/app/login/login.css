@@ -32,10 +32,10 @@ button{
 }
 .loginButton{
 margin-bottom: 12px;
-  background-color: #e572bd;
+  background-color: #95e26f;
 }
 .loginButton:hover{
-  background-color: #f90074;
+  background-color: #35e20f;
 }
 .backButton{
   background-color: #e572bd;

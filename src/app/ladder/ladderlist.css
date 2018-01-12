@@ -3,6 +3,12 @@ display: flex;
 flex-direction: row;
 }
 
+@media(max-width: 640px) {
+  .container {
+    flex-flow:wrap;
+  }
+}
+
 .ladderLinkPaper{
   order: 1;
   background: white;
@@ -21,20 +27,22 @@ a{
 }
 input.findLadderField{
   height: 36px;
+  width: 200px;
+  padding: 24px;
 }
 .ladderLink{
   padding: 18px;
   width: 200px;
+  background-color: #083463;
+  color: white;
+}
+.ladderLink:hover{
   background-color: white;
   color: #083463;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
   border-color: #083463;
-}
-.ladderLink:hover{
-  background-color: #083463;
-  color: white;
 }
 .ladderLinkSelected {
   left: 20px;

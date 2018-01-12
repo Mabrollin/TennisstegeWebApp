@@ -89,9 +89,11 @@ export class Signup {
     operation.subscribe(
       res => {
         console.log(res)
+        this.router.navigate(['/login']);
       },
       error => {
         console.log(error)
+        this.router.navigate(['/options']);
       }
     );
   }

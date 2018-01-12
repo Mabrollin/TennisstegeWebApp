@@ -1,10 +1,6 @@
-<div class="container">
+
         <img class="logo" width="180px" height="90px" src="assets/svg/logo.svg">
 
 
-  <startnavbar *ngIf="!hasLoggedInUser()" [@panelInOut]></startnavbar>
-  <usernavbar *ngIf="hasLoggedInUser()" [@panelInOut]></usernavbar>
-
-
-
-</div>
+  <startnavbar *ngIf="!hasLoggedInUser()" [@navbarAnimation] class="navlinks"></startnavbar>
+  <usernavbar *ngIf="hasLoggedInUser()" [@navbarAnimation] class="navlinks"></usernavbar>

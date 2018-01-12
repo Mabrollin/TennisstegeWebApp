@@ -1,19 +1,22 @@
 <div class="container">
 <div class="row">
+  <div class="profilePictureContainer">
+    <img [src]="getImage()" alt="" class="profilePicture">
+  </div>
+  <div class="about" >
+    <aboutProfilePanel [info]="mocktext"></aboutProfilePanel>
+  </div>
+
+
+</div>
+<div class="row">
   <div class="contactInfo">
     <contactInfoPanel [info]="user.contactInfo"></contactInfoPanel>
   </div>
-  <div class="profilePicture">
-    <img [src]="getImage()" alt="" height="200px">
-  </div>
-</div>
-<div class="row">
   <div class="LadderPanel" >
     <ladderProfilePanel [ladders]="user.ladderParticipation"></ladderProfilePanel>
   </div>
-  <div class="moreInfo" >
-    <aboutProfilePanel info="Hej"></aboutProfilePanel>
-  </div>
+
 </div>
 
 

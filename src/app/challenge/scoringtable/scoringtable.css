@@ -7,20 +7,53 @@
   background-color: white;
 }
 
-input {
-  height: 32px;
-  font-size: 16px;
-  width: 60px;
-}
-.playerNames{
+.durationPicker {
+  border-width: 1px;
+  border-color: #000;
+  border-style: solid;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
 
+.durationEntry {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.durationEntryLabel {
+  font-size: 18px;
+}
+
+.durationEntrySelect {
+  border-width: 1px;
+  border-color: #2b2b2b;
+  border-style: solid;
+  border-radius: 0;
+  font-size: 18px;
+  padding: 8px;
+  width: 100%;
+}
+
+.durationEntryDivider {
+  font-size: 18px;
+}
+
+.playerNames{
+  margin-top: 28px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 .playerName{
-  padding-left: 42px;
-  padding-right: 42px;
+width: 160px;
+text-align: left;
+}
+.playerNameRight {
+  text-align: right;
 }
 button{
   border: none;
@@ -33,9 +66,16 @@ button{
 }
 
 .sendButton{
-  background-color: green;
+  background-color: #95e26f;
+}
+
+.sendButton:hover {
+  background-color: #35e20f;
 }
 
 .cancelButton {
-  background-color: red;
+  background-color: #e572bd;
+}
+.cancelButtonButton:hover {
+  background-color: #f90074;
 }

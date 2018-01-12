@@ -30,6 +30,7 @@ constructor(private userInfoService: UserInfoService) {
 }
 info : string;
 username: string;
+mocktext: string = "Hej det här är Ester!  Ester spelar inte Tennis men hon gillar att sova. Här ska det senare stå en egen beskrivande text som du själv kan ändra såväl som profilbilden"
 user: User;
   ngOnInit(){
 
