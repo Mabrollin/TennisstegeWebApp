@@ -75,9 +75,9 @@ export class InputField {
     return this.errorMessage && this.errorMessage.length != 0;
   }
   handleChange(): void {
-    console.log(this.inputText);
     if (!this.inputText || this.inputText === "") {
       this.state = "noInput"
+      this.changeEvent.emit(this.inputText);
     }
     else {
       this.state = "hasInput";

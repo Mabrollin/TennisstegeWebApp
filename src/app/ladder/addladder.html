@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="rowContainer">
+    <inputfield label="Stegnamn" [errorMessage]="ladderNameFieldError"  (changeEvent)='handleChangeLadderNameEvent($event)' type="text"></inputfield>
+  </div>
+  <div class="rowContainer buttonContainer">
+    <button class="searchButton" type="button" (click)="searchAndAdd()">Sök och lägg till</button>
+    <button class="backButton" type="button" (click)="back()">backa</button>
+  </div>
+</div>

@@ -4,7 +4,7 @@ import { Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { UserSessionService } from './usersessionservice';
 
-import { LadderRepresentation } from '../_properties/ladderrepresentation';
+import { LadderRepresentation, NewLadder, LadderPlayer } from '../_properties';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -20,11 +20,21 @@ public currentUser: string;
     this.currentUser = userSessionService.getCurrentUser();
   }
 
-  private baseUserURL = 'http://tennisstege.eu-west-2.elasticbeanstalk.com/ladder/';
+  private baseLadderURL = '/ladder/';
+  private addPlayerURL = '/addPlayer';
+  private getPlayersURL = '/getPlayers';
 
 
   getLadder(name: string): Observable<any> {
-    return this.http.get<LadderRepresentation>(this.baseUserURL+name);
+    return this.http.get<LadderRepresentation>(this.baseLadderURL + name);
+  }
+
+  createLadder(newLadder: NewLadder): Observable<NewLadder>{
+    return this.http.post<NewLadder>(this.baseLadderURL, newLadder);
+  }
+
+  addPlayerToLadder(ladderName: string, player:LadderPlayer): Observable<null> {
+    return this.http.put<null>(this.baseLadderURL + ladderName + this.addPlayerURL, player);
   }
 
 }

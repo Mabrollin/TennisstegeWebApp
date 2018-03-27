@@ -1,10 +1,21 @@
 <div class="container">
-  <div class="ladderLinkPaper" *ngFor="let ladder of ladders">
-    <a [routerLink]="['/ladder', ladder.ladderName]">
-    <div class="ladderLink">
-  {{ladder.ladderName}}
+  <div class="ladderList">
+    <div class="ladderLinkPaper" *ngFor="let ladder of ladders">
+      <a [routerLink]="['/ladder', ladder.name]">
+      <div class="ladderLink">
+    {{ladder.name}}
+      </div>
+    </a>
+    </div>
+    <a routerLink="/ladder/add">
+      <div class="addLadder">
+        &nbsp; + &nbsp; Lägg till stege
+      </div>
+    </a>
+  </div>
+  <a routerLink="/ladder/new">
+    <div class="createLadder">
+      Skapa stege
     </div>
   </a>
-
-  </div>
 </div>

@@ -30,12 +30,13 @@ export class UserSessionService {
     return localStorage.getItem('token');
   }
 
-  hasActiveToken(): boolean {
+  hasToken(): boolean {
     let token: string = localStorage.getItem('token');
-    if(token && token!=null && token != '')
-      return this.isActive(token);
-    else
-      return false;
+    return (token && token!=null && token != '');
+  }
+
+  hasActiveToken(): boolean {
+  return this.hasToken() && this.isActive(this.getToken());
   }
 
   isActive(token: string){

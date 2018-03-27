@@ -3,6 +3,7 @@ import { UserSessionService, LadderService, ShadowService, ChallengeService } fr
 import { ActivatedRoute } from '@angular/router';
 import { LadderRepresentation, Challenge, NewChallenge, Record} from '../_properties/';
 import { swipeAnimation } from '../_animations';
+import { PlayerCard } from './playercard.component';
 
 
 @Component({

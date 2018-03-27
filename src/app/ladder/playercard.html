@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="playerCard" (click)="marked = !marked && !selfPlayer">
+    <div class="playerInfo" [ngClass]="{'selfPlayer': selfPlayer}">
+      <div class="playerName">
+        {{player.username}} {{player.position}}
+      </div>
+      <div class="playerRating">
+        Poäng: {{player.rating}}
+      </div>
+    </div>
+    <div [ngClass]="{'marked': marked}" class="challengeButtons">
+      <div class="challengeButton" (click)="!selfPlayer?issueChallenge(player.username): null" [ngClass]="{'disabledChallengeButton': selfPlayer}">
+        <div class="challengeLabel">
+          Utmana
+        </div>
+      </div>
+      <div class="cancelButton">
+        X
+      </div>
+    </div>
+  </div>
+</div>

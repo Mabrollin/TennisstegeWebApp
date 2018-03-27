@@ -32,8 +32,5 @@ button:focus{
 }
 .facebookButton{
   color: #F2F2F2;
-  background: #3b5998 url('https://www.facebook.com/images/fb_icon_325x325.png') no-repeat top left;
-}
-.facebookButton:hover{
-  background-color: #627AAD;
+  background: #4267b2;
 }

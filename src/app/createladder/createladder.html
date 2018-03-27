@@ -1,0 +1,24 @@
+<div class="registerBox" [@shake]='state' (@shake.done)="state = ''">
+  <div class="rowContainer inputContainer">
+    <inputfield label="Stegnamn" [errorMessage]="ladderNameFieldError"  (changeEvent)='handleChangeLadderNameEvent($event)' type="text"></inputfield>
+  </div>
+  <div class="rowContainer inputContainer">
+    <selectfield label="Välj typ av stege..." [options]="ladderTypeOptions" [error]="ladderTypeError" (changeEvent)='handleChangeLadderTypeEvent($event)'></selectfield>
+  </div>
+  <div class="rowContainer inputContainer">
+    <selectfield label="Välj synlighet..." [options]="visabilityOptions" [error]="visabilityError" (changeEvent)='handleChangeVisabilityEvent($event)'></selectfield>
+  </div>
+  <div class="rowContainer inputContainer">
+    <selectfield label="Välj inbjudningsalternativ..." [options]="joinabilityOptions" [error]="joinabilityError" (changeEvent)='handleChangeJoinabilityEvent($event)'></selectfield>
+  </div>
+  <div class="additionalInfo">
+    Du som inloggad användare kommer blir administrator för denna stege.
+  </div>
+  <div class="rowContainer buttonContainer">
+    <button class="registerButton" type="button" (click)="register()">Skapa Stege</button>
+    <button class="backButton" type="button" (click)="back()">backa</button>
+  </div>
+
+
+
+</div>

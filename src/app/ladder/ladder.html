@@ -16,32 +16,7 @@
         <div class="leaderBoardTitle">
           Poängtavla
         </div>
-        <div class="player" *ngFor="let player of ladder.players">
-          <div class="flipContainer playerCard" [ngClass]="{'flip':flipped==player}" (click)="flipped = flipped == player? null: player">
-            <div class="flipFront">
-              <div class="playerInfo" [ngClass]="{'selfPlayer': isLoggedInPlayer(player.username)}">
-                <div class="playerName">
-                  {{player.username}}
-                </div>
-                <div class="playerRating">
-                  Poäng: {{player.rating}}
-                </div>
-              </div>
-            </div>
-            <div class="flipBack">
-              <div class="challengeButtons">
-                <div class="challengeButton" (click)="!isLoggedInPlayer(player.username)?issueChallenge(player.username): null" [ngClass]="{'disabledChallengeButton': isLoggedInPlayer(player.username)}">
-                  <div class="challengeLabel">
-                      Utmana
-                  </div>
-                </div>
-                <div class="cancelButton">
-                  X
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <playercard class="player" *ngFor="let player of ladder.players" [player]="player" [selfPlayer]="isLoggedInPlayer(player.username)" (issueChallenge)='issueChallenge($event)'></playercard>
       </div>
 
       <div class="challenges">

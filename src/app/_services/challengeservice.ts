@@ -13,7 +13,7 @@ import 'rxjs/add/operator/catch';
 export class ChallengeService {
   constructor(private http: HttpClient) { }
 
-  private baseURL = 'http://tennisstege.eu-west-2.elasticbeanstalk.com/challenge';
+  private baseChallengeURL = '/challenge';
   private newChallengeURL = '/new';
   private recordURL = '/record';
 
@@ -22,14 +22,14 @@ export class ChallengeService {
     let bodyString = JSON.stringify(newChallenge); // Stringify payload
     let headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.baseURL + this.newChallengeURL, bodyString)
+    return this.http.post(this.baseChallengeURL + this.newChallengeURL, bodyString)
       .catch((error: any) => Observable.throw(error || 'Server error'));
   }
   record(challengeId: number, record: Record): Observable<Response> {
     let bodyString = JSON.stringify(record); // Stringify payload
     let headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.put(this.baseURL + "/" + challengeId + this.recordURL, bodyString)
+    return this.http.put(this.baseChallengeURL + "/" + challengeId + this.recordURL, bodyString)
       .catch((error: any) => Observable.throw(error || 'Server error'));
   }
 

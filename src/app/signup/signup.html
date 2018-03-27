@@ -1,4 +1,4 @@
-<div class="registerBox">
+<div class="registerBox" [@shake]='state' (@shake.done)="state = ''">
   <div class="rowContainer inputContainer">
     <inputfield label="Användarnamn" [errorMessage]="usernameFieldErrorMessage" (changeEvent)='handleChangeUsernameEvent($event)' type="text"></inputfield>
   </div>

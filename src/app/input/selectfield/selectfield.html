@@ -1,0 +1,8 @@
+<div class="content">
+  <div class="input" #inputField [ngClass]="{'error': error}">
+    <select class="select" required [(ngModel)]="selectedOption" (ngModelChange)="handleChange()">
+      <option [ngValue]="undefined" disabled selected>{{label}}</option>
+      <option *ngFor="let option of options" [ngValue]="option[1]">{{option[0]}}</option>
+    </select>
+  </div>
+</div>

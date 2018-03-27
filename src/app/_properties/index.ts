@@ -8,3 +8,4 @@ export * from './record';
 export * from './user';
 export * from './newchallenge';
 export * from './score';
+export * from './newladder';

@@ -8,17 +8,18 @@ flex-direction: row;
     flex-flow:wrap;
   }
 }
-
-.ladderLinkPaper{
+.ladderList {
   order: 1;
   background: white;
   padding: 16px;
+}
+.ladderLinkPaper{
+  margin-bottom: 8px;
 }
 
 .findLadderPaper{
   order: 2;
   background: white;
-  padding: 16px;
   margin-left: 16px;
 }
 a{
@@ -35,15 +36,47 @@ input.findLadderField{
   width: 200px;
   background-color: #083463;
   color: white;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
 }
 .ladderLink:hover{
   background-color: white;
   color: #083463;
+  border-color: #083463;
+}
+.addLadder{
+  margin-top: 32px;
+  padding: 18px;
+  width: 200px;
+  background-color: #95e26f;
+  color: white;
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  border-color: #083463;
+  border-color: #white;
 }
-.ladderLinkSelected {
-  left: 20px;
+
+.addLadder:hover{
+  background-color: white;
+  color: #35e20f;
+  border-color: #95e26f;
+}
+
+.createLadder{
+  padding: 18px;
+  width: 200px;
+  background-color: #f90074;
+  color: white;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #white;
+}
+
+.createLadder:hover{
+  background-color: white;
+  color: #f90074;
+  border-color: #f90074;
 }

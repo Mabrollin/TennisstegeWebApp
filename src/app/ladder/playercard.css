@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 180px;
+  height: 40px;
+}
+
+
+.contentRow {
+  display: flex;
+  flex-direction: row;
+}
+@media(max-width: 640px) {
+  .contentRow {
+    flex-flow:wrap;
+  }
+}
+
+.player {
+  cursor: pointer;
+  margin: 8px;
+}
+
+.playerCard {
+  width: 180px;
+  height: 40px;
+}
+
+.playerInfo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.playerName {
+    padding: 4px;
+    font-size: 16px;
+
+}
+
+.playerRating {
+  padding-top: 8px;
+  font-size: 12px;
+  padding-right: 4px;
+}
+
+.selfPlayer {
+  background-color: pink;
+  color: white;
+}
+
+.challengeButtons.marked{
+  width: inherit;
+
+}
+
+.challengeButtons {
+  top: -40px;
+  position: relative;
+  height: inherit;
+  width: 0;
+  overflow:hidden;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.4s ease-in-out;
+}
+.challengeButton{
+  height: inherit;
+  width: 150px;
+  background-color: #083463;
+  color: white;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+.challengeButton:hover{
+  background-color: #083463;
+}
+.challengeLabel {
+  padding: 4px;
+  font-size: 16px;
+}
+
+.cancelButton {
+  padding: 12px;
+  padding-left: 22px;
+  width: 25px;
+  background-color: #ff6666;
+}
+.cancelButton:hover {
+  background-color: #ff4444;
+  transition: all 0.2s ease-in-out;
+}

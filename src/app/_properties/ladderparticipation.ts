@@ -1,5 +1,5 @@
 export class LadderParticipation{
-  ladderName: string;
+  name: string;
   rating: number;
   ladderId: number;
 
